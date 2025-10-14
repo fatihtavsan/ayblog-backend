@@ -34,7 +34,6 @@ app.get("/posts", async (req, res) => {
     const postsRes = await pool.query("SELECT * FROM posts ORDER BY date DESC");
     const posts = postsRes.rows;
     console.log("Posts:", posts);
-    console.log("db:", connectionString);
 
     for (const post of posts) {
       const tagRes = await pool.query(
