@@ -16,7 +16,10 @@ app.use(express.json());
 
 const pool = new Pool({
   connectionString: process.env.DATABASE_URL,
+  ssl: { rejectUnauthorized: false },
 });
+
+module.exports = pool;
 
 const PORT = process.env.PORT || 3001;
 app.listen(PORT, () => console.log(`Server ${PORT} portunda`));
