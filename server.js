@@ -7,7 +7,7 @@ const logger = require("./logger");
 const app = express();
 app.use(
   cors({
-    origin: "https://ayblog.onrender.com",
+    /* origin: "https://domain.com", */
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true,
   })
