@@ -19,7 +19,7 @@ const pool = new Pool({
 });
 
 const PORT = process.env.PORT || 3001;
-app.listen(PORT, () => console.log("Server " + PORT + " portunda"));
+app.listen(PORT, () => console.log(`Server ${PORT} portunda`));
 
 // --- POSTS GET ALL ---
 app.get("/posts", async (req, res) => {
