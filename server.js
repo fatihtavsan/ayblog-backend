@@ -18,6 +18,10 @@ const pool = new Pool({
   connectionString: process.env.DATABASE_URL,
 });
 
+const PORT = process.env.PORT || 3001;
+app.listen(PORT, () => console.log(`Server ${PORT} portunda`));
+
+
 // --- POSTS GET ALL ---
 app.get("/posts", async (req, res) => {
   try {
@@ -174,6 +178,3 @@ app.post("/tags", async (req, res) => {
     res.status(500).json({ error: "Sunucu hatası" });
   }
 });
-
-const PORT = process.env.PORT || 3001;
-app.listen(PORT, () => console.log(`Server ${PORT} portunda`));
