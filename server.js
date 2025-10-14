@@ -2,7 +2,9 @@ require("dotenv").config();
 const express = require("express");
 const cors = require("cors");
 const { Pool } = require("pg");
+const dns = require("dns");
 const logger = require("./logger");
+dns.setDefaultResultOrder("ipv4first"); 
 
 const app = express();
 app.use(
