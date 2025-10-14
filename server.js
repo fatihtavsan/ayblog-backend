@@ -19,9 +19,11 @@ const pool = new Pool({
   ssl: { rejectUnauthorized: false },
 });
 
-module.exports = pool;
+pool.connect()
+  .then(() => console.log("DB bağlantısı başarılı"))
+  .catch((err) => console.error("DB bağlantısı hatası:", err.stack || err.message));
 
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 10000;
 app.listen(PORT, () => console.log(`Server ${PORT} portunda`));
 
 // --- POSTS GET ALL ---
