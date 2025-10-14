@@ -1,0 +1,4 @@
+[2025-08-01 18:31:29] ERROR: error: invalid input syntax for type integer: "asdf"
+    at /Users/fatih/ayblog-backend/node_modules/pg-pool/index.js:45:11
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async /Users/fatih/ayblog-backend/server.js:64:21
