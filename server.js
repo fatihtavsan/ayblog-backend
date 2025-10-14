@@ -26,6 +26,7 @@ app.get("/posts", async (req, res) => {
   try {
     const postsRes = await pool.query("SELECT * FROM posts ORDER BY date DESC");
     const posts = postsRes.rows;
+    console.log("Posts:", posts);
 
     for (const post of posts) {
       const tagRes = await pool.query(
@@ -34,11 +35,13 @@ app.get("/posts", async (req, res) => {
          WHERE pt.post_id = $1`,
         [post.id]
       );
+      console.log(`Post ${post.id} tags:`, tagRes.rows);
       post.tags = tagRes.rows;
     }
 
     res.json(posts);
   } catch (err) {
+      console.error("GET /posts error:", err.stack || err.message);
     logger.error(err.stack || err.message);
     res.status(500).json({ error: "Sunucu hatası" });
   }
