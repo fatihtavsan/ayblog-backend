@@ -9,7 +9,7 @@ dns.setDefaultResultOrder("ipv4first");
 const app = express();
 app.use(
   cors({
-    origin: "https://ayblog.onrender.com",
+    origin: "https://www.loctiluna.com",
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true,
   })
