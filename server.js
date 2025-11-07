@@ -25,7 +25,7 @@ pool.connect()
   .then(() => console.log("DB bağlantısı başarılı"))
   .catch((err) => console.error("DB bağlantısı hatası:", err.stack || err.message));
 
-const PORT = process.env.PORT || 10000;
+const PORT = process.env.PORT || 5432;
 app.listen(PORT, () => console.log(`Server ${PORT} portunda`));
 
 // --- POSTS GET ALL ---
